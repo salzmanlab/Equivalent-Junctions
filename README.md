@@ -18,15 +18,15 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -o output_file.txt
 ```
    - output file: 
-       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+      - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
          equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
+      - example equivalent junction in the output file:
    
-   - example equivalent junction in the output file:
    ```
                              AG LEPR chr1 65420740 65425302  
-  ```
+   ```
 - getJunctionsFromTxt.py: 
    - determines equivalent junction sequences from a genome fasta file and annotatiaon file in the BED format containing chr, donor, and acceptor coordinates.
    - usage: 
@@ -39,9 +39,8 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -a acceptor_coordinate_column (default=2)
                                  -s strand_column (default=3)
     ```                                       
-
  - output file: 
-     - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+   - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
          equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
