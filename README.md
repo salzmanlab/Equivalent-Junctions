@@ -13,8 +13,8 @@ This repository contains the python scripts that can be used to extarct equivale
    - usage:
       ```  
      python getJunctionsFromGTF.py -f genome_file.fa
-                                 -a annotation_file.gtf
-                                 -o output_file.txt
+                                   -a annotation_file.gtf
+                                   -o output_file.txt
       ```
    - output file: 
          - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
@@ -33,12 +33,12 @@ This repository contains the python scripts that can be used to extarct equivale
    
   ```
     python getJunctionsFromTxt.py -f genome_file.fa
-                                 -t annotation_file.txt
-                                 -o output_file.txt
-                                 -c choromosome_column (defult=0) 
-                                 -d donor_coordinate_column (default=1) 
-                                 -a acceptor_coordinate_column (default=2)
-                                 -s strand_column (default=3)
+                                  -t annotation_file.txt
+                                  -o output_file.txt
+                                  -c choromosome_column (defult=0) 
+                                  -d donor_coordinate_column (default=1) 
+                                  -a acceptor_coordinate_column (default=2)
+                                  -s strand_column (default=3)
    ```
    - output file: 
       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
