@@ -13,8 +13,8 @@ This repository contains the python scripts that can be used to extarct equivale
    - usage:
       ```  
      python getJunctionsFromGTF.py -f genome_file.fa
-                                   -a annotation_file.gtf
-                                   -o output_file.txt
+                                    -a annotation_file.gtf
+                                    -o output_file.txt
       ```
    - output file: 
          - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
