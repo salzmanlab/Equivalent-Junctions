@@ -20,7 +20,7 @@ This repository contains the python scripts that can be used to extarct equivale
    - output file: 
        - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
-   equivalent_junction_sequence gene_name chromosome donor_exon_coordinate acceptor_exon_coordinate   
+         equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
    
    - example equivalent junction in the output file:
@@ -40,7 +40,7 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -s strand_column (default=3)
     ```                                       
    - output: 
-      - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
-   equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
+         equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
