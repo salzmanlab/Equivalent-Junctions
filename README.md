@@ -8,7 +8,7 @@ This repository contains the python scripts that can be used to extarct equivale
 
 # Pyhton scripts
 
-- getJunctionsFromGTF.py: 
+## getJunctionsFromGTF.py: 
    - determines equivalent junctions from a genome fasta file and an annotation file in the GTF format
    - usage:
       ```  
@@ -27,7 +27,7 @@ This repository contains the python scripts that can be used to extarct equivale
    ```
                              AG LEPR chr1 65420740 65425302  
    ```
-- getJunctionsFromTxt.py: 
+   ## getJunctionsFromTxt.py: 
    - determines equivalent junction sequences from a genome fasta file and annotatiaon file in the BED format containing chr, donor, and acceptor coordinates.
    - usage: 
    ```
