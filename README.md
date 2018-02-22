@@ -5,10 +5,8 @@ This repository contains the python scripts that can be used to extarct equivale
 # Pyhton scripts
 
 - getJunctionsFromGTF.py: Determines equivalent junctions from a genome fasta file and an annotation file in the GTF format.
-   - usage:  python getJunctionsFromGTF.py -f genome_file.fa
-
+   - usage:  python getJunctionsFromGTF.py -f genome_file.fa\\
                                            -a annotation_file.gtf
-
                                            -o output_file.txt
 
    - output file: a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
