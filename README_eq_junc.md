@@ -1,4 +1,4 @@
-# Example genome and annotations used for equivalent junction analysis in the paper
+## Example genome and annotations used for equivalent junction analysis in the paper
 
 ### Human genome (GRCH38)
 genome:
