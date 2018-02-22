@@ -1,7 +1,7 @@
 # Example genome and annotations
 
 Human genome (GRCH38)
-genome: ```ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/GRCh38.primary_assembly.genome.fa.gz```
+genome: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/GRCh38.primary_assembly.genome.fa.gz
 annotation: ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25
 /gencode.v25.annotation.gtf.gz
 
