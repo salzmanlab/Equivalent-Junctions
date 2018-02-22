@@ -1,0 +1,81 @@
+ANALYZING GENCODE GRCH38
+
+files downloaded on 12/13/16
+
+# get annotation
+wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/gencode.v25.annotation.gtf.gz
+gunzip gencode.v25.annotation.gtf.gz
+
+# get genome fasta file
+wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/GRCh38.primary_assembly.genome.fa.gz
+gunzip GRCh38.primary_assembly.genome.fa.gz
+
+# generate per-junction equivalence junction sequence
+python getJunctionsFromGTF.py -f /scratch/PI/horence/linda/EquivJuncPaper/GRCh38.primary_assembly.genome.fa -a /scratch/PI/horence/linda/EquivJuncPaper/gencode.v25.annotation.gtf -o /scratch/PI/horence/linda/EquivJuncPaper/GRCh38_gencodev25.txt
+
+# generate counts per equivalence junction sequence
+sort -k1 GRCh38_gencodev25.txt | uniq | cut -f1 | sort | uniq -c | sort -k1nr > GRCh38_gencodev25_equivSeqCounts.txt
+
+ANALYZING GENCODE GRCm38
+
+files downloaded on 12/16/16
+
+# get annotation
+wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_mouse/release_M12/gencode.vM12.annotation.gtf.gz
+gunzip gencode.vM12.annotation.gtf.gz
+
+# get genome fasta file
+wget ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_mouse/release_M12/GRCm38.primary_assembly.genome.fa.gz
+gunzip GRCm38.primary_assembly.genome.fa.gz
+
+# generate per-junction equivalence junction sequence
+python getJunctionsFromGTF.py -f /scratch/PI/horence/linda/EquivJuncPaper/GRCm38.primary_assembly.genome.fa -a /scratch/PI/horence/linda/EquivJuncPaper/gencode.vM12.annotation.gtf -o /scratch/PI/horence/linda/EquivJuncPaper/GRCm38_gencodevM12.txt
+
+# generate counts per equivalence junction sequence
+sort -k1 GRCm38_gencodevM12.txt | uniq | cut -f1 | sort | uniq -c | sort -k1nr > GRCm38_gencodevM12_equivSeqCounts.txt
+
+ANALYZING ENGSTROM SIMULATED JUNCTIONS (Human Simulation 1)
+
+# generate per-junction equivalence junction sequence for junctions (19nt or longer intron)
+python getJunctionsFromSimTruth.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -t /scratch/PI/horence/reads/Engstrom2013_simulated/sim1/truth/TruthOL1_junctions.out -o /scratch/PI/horence/linda/EquivJuncPaper/Sim1junctionEquivSeqs.txt
+
+# generate per-junction equivalence junction sequence for deletions (less than 19nt intron)
+python getJunctionsFromSimTruth.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -t /scratch/PI/horence/reads/Engstrom2013_simulated/sim1/truth/TruthOL1_deletions.out -o /scratch/PI/horence/linda/EquivJuncPaper/Sim1deletionEquivSeqs.txt
+
+# generate counts per equivalence junction sequence (deletions and junctions combined since the categorization was arbitrary)
+cat Sim1junctionEquivSeqs.txt Sim1deletionEquivSeqs.txt | sort -k1 | uniq | cut -f1 | sort | uniq -c | sort -k1nr > Sim1_equivSeqCounts.txt
+
+ANALYZING ENGSTROM SIMULATED JUNCTIONS (Human Simulation 2)
+
+# generate per-junction equivalence junction sequence for junctions (19nt or longer intron)
+python getJunctionsFromSimTruth.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -t /scratch/PI/horence/reads/Engstrom2013_simulated/sim2/truth/TruthOL1_junctions.out -o /scratch/PI/horence/linda/EquivJuncPaper/Sim2junctionEquivSeqs.txt
+
+# generate per-junction equivalence junction sequence for deletions (less than 19nt intron)
+python getJunctionsFromSimTruth.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -t /scratch/PI/horence/reads/Engstrom2013_simulated/sim2/truth/TruthOL1_deletions.out -o /scratch/PI/horence/linda/EquivJuncPaper/Sim2deletionEquivSeqs.txt
+
+# generate counts per equivalence junction sequence (deletions and junctions combined since the categorization was arbitrary)
+cat Sim2junctionEquivSeqs.txt Sim2deletionEquivSeqs.txt | sort -k1 | uniq | cut -f1 | sort | uniq -c | sort -k1nr > Sim2_equivSeqCounts.txt
+
+
+ANALYZING ENGSTROM SIMULATED TRANSCRIPTOME (Human Simulation 1)
+
+# generate per-junction equivalence junction sequence
+python getJunctionsFromGTF.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -a /scratch/PI/horence/reads/Engstrom2013_simulated/Simulated_transcriptomes/simulated_reads_transcripts_1.gtf -o /scratch/PI/horence/linda/EquivJuncPaper/Sim1transcriptome.txt
+
+
+ANALYZING ENGSTROM SIMULATED TRANSCRIPTOME (Human Simulation 2)
+
+# generate per-junction equivalence junction sequence
+python getJunctionsFromGTF.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -a /scratch/PI/horence/reads/Engstrom2013_simulated/Simulated_transcriptomes/simulated_reads_transcripts_2.gtf -o /scratch/PI/horence/linda/EquivJuncPaper/Sim2transcriptome.txt
+
+
+ANALYZING CIRCBASE TRANSCRIPTS
+
+# get data 12/28/16
+wget http://www.circbase.org/download/hsa_hg19_circRNA.txt
+
+# generate per-junction equivalence junction sequence
+python getJunctionsFromTxt.py -f /scratch/PI/horence/linda/EquivJuncPaper/hg19_genome.fa -t /scratch/PI/horence/linda/EquivJuncPaper/hsa_hg19_circRNA.txt -o /scratch/PI/horence/linda/EquivJuncPaper/hsa_hg19_circRNA_EquivSeqs.txt > circBase.out
+
+# generate counts per equivalence junction sequence
+sort -k1 hsa_hg19_circRNA_EquivSeqs.txt | uniq | cut -f1 | sort | uniq -c | sort -k1nr > hsa_hg19_circRNA_equivSeqCounts.txt
