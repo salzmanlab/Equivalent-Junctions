@@ -11,20 +11,18 @@ This repository contains the python scripts that can be used to extarct equivale
 - getJunctionsFromGTF.py: 
    - determines equivalent junctions from a genome fasta file and an annotation file in the GTF format
    - usage:
-        
-   ```  
+      ```  
    python getJunctionsFromGTF.py -f genome_file.fa
                                  -a annotation_file.gtf
                                  -o output_file.txt
-   ```
-
-      - output file: 
+      ```
+    - output file: 
          - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
 
    ```
          equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
-      - example equivalent junction in the output file:
+     - example equivalent junction in the output file:
    
    ```
                              AG LEPR chr1 65420740 65425302  
@@ -41,7 +39,7 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -a acceptor_coordinate_column (default=2)
                                  -s strand_column (default=3)
     ```                                       
-   - output file: 
+    - output file: 
       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
          equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
