@@ -14,14 +14,14 @@ annotation: ```ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_mouse/release_M12 /gen
 
 ### Rat (rn6)
 
-genome: ```ftp://ftp.ensembl.org/pub/release-91/fasta/rattus_norvegicus/dna /Rattus_
-norvegicus.Rnor_6.0.dna.toplevel.fa.gz```
+genome: ```ftp://ftp.ensembl.org/pub/release-91/fasta/rattus_norvegicus/dna/Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa.gz```
 
 annotation: ```ftp://ftp.ensembl.org/pub/release-91/gtf/rattus_norvegicus/Rattus_norvegicus
 .Rnor_6.0.91.gtf.gz```
 
 ### Fly (dm3)
 genome: ```ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r3.1/fasta```
+
 annotation: ```ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r3.1/gff/```
 
 
