@@ -8,7 +8,8 @@ This repository contains the python scripts that can be used to extarct equivale
 
 # Pyhton scripts
 
-- getJunctionsFromGTF.py: Determines equivalent junctions from a genome fasta file and an annotation file in the GTF format.
+- getJunctionsFromGTF.py: 
+   - determines equivalent junctions from a genome fasta file and an annotation file in the GTF format
    - usage:
         
 ```  
@@ -16,14 +17,18 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -a annotation_file.gtf
                                  -o output_file.txt
 ```
-   - output file: a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+   - output file: 
+       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
    equivalent_junction_sequence gene_name chromosome donor_exon_coordinate acceptor_exon_coordinate   
    ```
    
-   - example equivalent junction in the output file: AG LEPR chr1 65420740 65425302  
-  
-- getJunctionsFromTxt.py: Determines equivalent junction sequences from a genome fasta file and annotatiaon file in the BED format containing chr, donor, and acceptor coordinates.
+   - example equivalent junction in the output file:
+   ```
+   AG LEPR chr1 65420740 65425302  
+  ```
+- getJunctionsFromTxt.py: 
+    - determines equivalent junction sequences from a genome fasta file and annotatiaon file in the BED format containing chr, donor, and acceptor coordinates.
    - usage: 
    ```
    python getJunctionsFromTxt.py -f genome_file.fa
@@ -34,7 +39,8 @@ This repository contains the python scripts that can be used to extarct equivale
                                  -a acceptor_coordinate_column (default=2)
                                  -s strand_column (default=3)
     ```                                       
-   - output: a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+   - output: 
+      - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
    ```
    equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
