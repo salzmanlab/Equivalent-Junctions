@@ -111,7 +111,7 @@ def parseChrFeatures(chrSeqRecord):
                 if args.verbose:    
                     print ("equiv from checking both directions:", equivJuncSeq)
                 
-                o_handle.write("\t".join([equivJuncSeq, getGeneName(sftr), str(output_Strand[curStrand]), chrSeqRecord.id, str(curDonors[b_ind]), str(curAcceptors[b_ind+1])])) 
+                o_handle.write("\t".join([equivJuncSeq, getGeneName(sftr), chrSeqRecord.id, str(output_Strand[curStrand]), str(curDonors[b_ind]), str(curAcceptors[b_ind+1])])) 
                 o_handle.write("\n")
         except Exception as e:
             print ("Exception")
