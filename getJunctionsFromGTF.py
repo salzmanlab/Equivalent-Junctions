@@ -19,6 +19,8 @@ from BCBio import GFF
 
 CHECK_EQUIV_LEN = 30 # number of nt to check on either side of exon boundary for equivalent junction sequences
 
+output_Strand = ["-", "+"]     #for the output text file for equivalent junctions we want to also add strand information as + or -   
+
 # tries getting primary gene name, if that doesn't exist tries getting secondary gene name.
 # if neither primary or secondary gene name fields exist, an exception will be thrown
 # which is caught and handled in the calling function
@@ -52,14 +54,14 @@ def parseChrFeatures(chrSeqRecord):
             
             if args.verbose:
                 if not sftr:    
-                    print "single exon gene:", getGeneName(ftr)
+                    print ("single exon gene:", getGeneName(ftr))
                     
-                print "exon donors:", curDonors
-                print "exon acceptors:", curAcceptors
+                print ("exon donors:", curDonors)
+                print ("exon acceptors:", curAcceptors)
                 
-            for b_ind in xrange(len(curAcceptors)-1):
+            for b_ind in range(len(curAcceptors)-1):
                 if args.verbose:
-                    print curDonors[b_ind], curAcceptors[b_ind+1]
+                    print (curDonors[b_ind], curAcceptors[b_ind+1])
                 if curStrand == 1: # + strand
                     dseq_prev = str(f_dict[chrSeqRecord.id][curDonors[b_ind]-CHECK_EQUIV_LEN:curDonors[b_ind]].seq).upper()
                     dseq_next = str(f_dict[chrSeqRecord.id][curDonors[b_ind]:curDonors[b_ind]+CHECK_EQUIV_LEN].seq).upper()
@@ -77,10 +79,10 @@ def parseChrFeatures(chrSeqRecord):
                     aseq_next = aseq[CHECK_EQUIV_LEN:]
                 
                 if args.verbose:    
-                    print "dseq_prev:", dseq_prev
-                    print "dseq_next:", dseq_next
-                    print "aseq_prev:", aseq_prev
-                    print "aseq_next:", aseq_next
+                    print ("dseq_prev:", dseq_prev)
+                    print ("dseq_next:", dseq_next)
+                    print ("aseq_prev:", aseq_prev)
+                    print ("aseq_next:", aseq_next)
                 
                 # generate equiv junc seq
                 equivJuncSeq = ""
@@ -96,7 +98,7 @@ def parseChrFeatures(chrSeqRecord):
                 equivJuncSeq = equivJuncSeq[::-1]  # since it was added from end 1 by 1, need to reverse to get coorrect order
                 
                 if args.verbose:    
-                    print "equiv from moving upstream:", equivJuncSeq
+                    print ("equiv from moving upstream:", equivJuncSeq)
                     
                 # check moving breakpoint more downstream in gene
                 e_ind = 0
@@ -107,15 +109,15 @@ def parseChrFeatures(chrSeqRecord):
                     e_ind = e_ind + 1
                     
                 if args.verbose:    
-                    print "equiv from checking both directions:", equivJuncSeq
+                    print ("equiv from checking both directions:", equivJuncSeq)
                 
-                o_handle.write("\t".join([equivJuncSeq, getGeneName(sftr), chrSeqRecord.id, str(curDonors[b_ind]), str(curAcceptors[b_ind+1])])) 
+                o_handle.write("\t".join([equivJuncSeq, getGeneName(sftr), str(output_Strand[curStrand]), chrSeqRecord.id, str(curDonors[b_ind]), str(curAcceptors[b_ind+1])])) 
                 o_handle.write("\n")
         except Exception as e:
-            print "Exception"
-            print e
-            print "error:", sys.exc_info()[0]
-            print "parsing features for", ftr
+            print ("Exception")
+            print (e)
+            print ("error:", sys.exc_info()[0])
+            print ("parsing features for", ftr)
             
             
 if __name__  == "__main__":
@@ -143,13 +145,13 @@ if __name__  == "__main__":
     ########### read in the annotations, adding annotations to the sequences 
     a_handle = open(args.annotationFile, "rU")
     if args.verbose:
-        print "opening annotation file", args.annotationFile
+        print ("opening annotation file", args.annotationFile)
     
-    o_handle = open(args.outFile, "wb")
+    o_handle = open(args.outFile, "w")
     
     for rec in GFF.parse(a_handle, base_dict=f_dict, limit_info=limit_info): # each rec is a SeqRecord (for 1 chromosome)
         if args.verbose:
-            print "####### starting new chromosome: " + str(rec.id)
+            print ("####### starting new chromosome: " + str(rec.id))
         # populate the data structures with genes and exons from this chromosome and pickle the objects
         parseChrFeatures(rec)
     

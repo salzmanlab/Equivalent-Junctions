@@ -43,7 +43,7 @@ def getEquivSeqs(txtFile, chrCol, donorCol, acceptorCol, strandCol):
                 donorLoc = int(splits[donorCol])
                 acceptorLoc = int(splits[acceptorCol])
             if args.verbose:
-                print juncChr, juncStrand, donorLoc, acceptorLoc
+                print (juncChr, juncStrand, donorLoc, acceptorLoc)
 
             if juncChr in f_dict:
                 if juncStrand == "+":
@@ -64,10 +64,10 @@ def getEquivSeqs(txtFile, chrCol, donorCol, acceptorCol, strandCol):
                     aseq_next = aseq[CHECK_EQUIV_LEN:]
                 
                 if args.verbose:    
-                    print "dseq_prev:", dseq_prev
-                    print "dseq_next:", dseq_next
-                    print "aseq_prev:", aseq_prev
-                    print "aseq_next:", aseq_next
+                    print ("dseq_prev:", dseq_prev)
+                    print ("dseq_next:", dseq_next)
+                    print ("aseq_prev:", aseq_prev)
+                    print ("aseq_next:", aseq_next)
                     
                     
                 # generate equiv junc seq
@@ -84,7 +84,7 @@ def getEquivSeqs(txtFile, chrCol, donorCol, acceptorCol, strandCol):
                 equivJuncSeq = equivJuncSeq[::-1]  # since it was added from end 1 by 1, need to reverse to get coorrect order
                 
                 if args.verbose:    
-                    print "equiv from moving upstream:", equivJuncSeq
+                    print ("equiv from moving upstream:", equivJuncSeq)
                     
                 # check moving breakpoint more downstream in gene
                 e_ind = 0
@@ -95,15 +95,15 @@ def getEquivSeqs(txtFile, chrCol, donorCol, acceptorCol, strandCol):
                     e_ind = e_ind + 1
                     
                 if args.verbose:    
-                    print "equiv from checking both directions:", equivJuncSeq
+                    print ("equiv from checking both directions:", equivJuncSeq)
                 
                 o_handle.write("\t".join([equivJuncSeq, juncChr, str(donorLoc), str(acceptorLoc)])) 
                 o_handle.write("\n")
         except Exception as e:
-            print "Exception"
-            print e
-            print "error:", sys.exc_info()[0]
-            print "parsing line", line
+            print ("Exception")
+            print (e)
+            print ("error:", sys.exc_info()[0])
+            print ("parsing line", line)
     t_handle.close()
             
 if __name__  == "__main__":
@@ -124,6 +124,6 @@ if __name__  == "__main__":
     f_dict = SeqIO.to_dict(SeqIO.parse(f_handle, "fasta"))
     f_handle.close()
     
-    o_handle = open(args.outFile, "wb")
+    o_handle = open(args.outFile, "w")
     getEquivSeqs(args.txtFile, args.chrCol, args.donorCol, args.acceptorCol, args.strandCol)
     o_handle.close()
