@@ -4,7 +4,7 @@ This repository contains the python scripts that can be used to extarct equivale
 
 # Software
 
-- Python 2.7.5 with Biopython installed
+- Python 3.6.1 with Biopython 1.71 installed
 
 # Pyhton scripts
 
@@ -20,12 +20,12 @@ This repository contains the python scripts that can be used to extarct equivale
          - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
 
    ```
-         equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
+         equiv_junc_sequence   gene_name   strand   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
    - example equivalent junction in the output file:
    
    ```
-                                    AG LEPR chr1 65420740 65425302  
+                                    AG LEPR + chr1 65420740 65425302  
    ```
    ## getJunctionsFromTxt.py: 
    - determines equivalent junction sequences from a genome fasta file and annotatiaon file in the BED format containing chr, donor, and acceptor coordinates.
@@ -44,7 +44,7 @@ This repository contains the python scripts that can be used to extarct equivale
       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
   
    ```
-         equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
+         equiv_junc_sequence   gene_name   strand   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
    Note: Example genome and annotations that have been analyzed for equivalent junctions are provided in equiv_junc_genomes.md. The codes are pretty general and any genome can be used for equivalent junction analysis.
 
@@ -52,5 +52,5 @@ This repository contains the python scripts that can be used to extarct equivale
 
 After running the python script and obtaining the output_file containing the equivalent junction sequence for each exon-exon junction, the following command gives the total number of each equivalent junction sequence:
 ```
-cut -f1,3,4,5 output_file.txt | sort -k1 | uniq |cut -f1 | sort |uniq -c| sort -k1nr > output_file_equivSeqCounts.txt 
+cut -f1,4,5,6 output_file.txt | sort -u |cut -f1 | sort |uniq -c| sort -k1nr > output_file_equivSeqCounts.txt 
 ```
