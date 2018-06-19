@@ -4,7 +4,7 @@ This repository contains the python scripts that can be used to extarct equivale
 
 # Software
 
-- Python 2.7.5 with Biopython installed
+- Python 3.0 and higher versions with Biopython 1.71 installed
 
 # Pyhton scripts
 
@@ -52,5 +52,5 @@ This repository contains the python scripts that can be used to extarct equivale
 
 After running the python script and obtaining the output_file containing the equivalent junction sequence for each exon-exon junction, the following command gives the total number of each equivalent junction sequence:
 ```
-cut -f1,3,4,5 output_file.txt | sort -k1 | uniq |cut -f1 | sort |uniq -c| sort -k1nr > output_file_equivSeqCounts.txt 
+cut -f1,4,5,6 output_file.txt | sort -u |cut -f1 | sort |uniq -c| sort -k1nr > output_file_equivSeqCounts.txt 
 ```
