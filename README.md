@@ -46,6 +46,8 @@ This repository contains the python scripts that can be used to extarct equivale
    ```
          equiv_junc_sequence   gene_name   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
    ```
+   Note: Example genome and annotations that have been analyzed for equivalent junctions are provided in equiv_junc_genomes.md. The codes are pretty general and any genome can be used for equivalent junction analysis.
+
 ## Computing the number of equivalent junctions:
 
 After running the python script and obtaining the output_file containing the equivalent junction sequence for each exon-exon junction, the following command gives the total number of each equivalent junction sequence:
