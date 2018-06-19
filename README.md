@@ -4,7 +4,7 @@ This repository contains the python scripts that can be used to extarct equivale
 
 # Software
 
-- Python 3.0 and higher versions with Biopython 1.71 installed
+- Python 3.6.1 with Biopython 1.71 installed
 
 # Pyhton scripts
 
