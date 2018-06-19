@@ -97,7 +97,7 @@ def getEquivSeqs(txtFile, chrCol, donorCol, acceptorCol, strandCol):
                 if args.verbose:    
                     print ("equiv from checking both directions:", equivJuncSeq)
                 
-                o_handle.write("\t".join([equivJuncSeq, juncChr, str(donorLoc), str(acceptorLoc)])) 
+                o_handle.write("\t".join([equivJuncSeq, juncChr, str(juncStrand), str(donorLoc), str(acceptorLoc)])) 
                 o_handle.write("\n")
         except Exception as e:
             print ("Exception")
