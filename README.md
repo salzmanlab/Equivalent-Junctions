@@ -17,7 +17,7 @@ This repository contains the python scripts that can be used to extarct equivale
                                     -o output_file.txt
       ```
    - output file: 
-         - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
+         - a tab delimited file with an extracted equivalent junction sequence for each annotated exon-exon boundary: 
 
    ```
          equiv_junc_sequence   gene_name   strand   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
