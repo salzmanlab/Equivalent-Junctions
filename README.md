@@ -1,6 +1,6 @@
 # Equivalent Junctions
 
-This repository contains the python scripts that can be used to extarct equivalent junctions for a genome. README_eq_junc provides more details on how to run the scripts and get the summary of equivalnt junctions.
+This repository contains the python scripts that can be used to extarct equivalent junctions for a genome. equiv_junc_genome provides more details on how to run the scripts and get the summary of equivalnt junctions.
 
 # Software
 
