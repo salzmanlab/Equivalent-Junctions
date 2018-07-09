@@ -1,6 +1,6 @@
 ## Example genome and annotations used for equivalent junction analysis in the paper
 
-### Human genome (GRCH38)
+### Human genome (GRCh38)
 genome:
 ```ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/GRCh38.primary_assembly.genome.fa.gz```
 
