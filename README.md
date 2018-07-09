@@ -1,6 +1,6 @@
 # Equivalent Junctions
 
-This repository contains the python scripts that can be used to extarct equivalent junctions for a genome. The links for downloading a number of example genomes analyzed in the paper are [here](https://github.com/roozbehdn/Equivalent-Junctions/blob/master/equiv_junc_genomes.md).
+This repository contains the python scripts that can be used to extarct equivalent junctions for a genome. The codes are pretty general and can be used for any genome.
 
 # Software
 
@@ -20,7 +20,7 @@ This repository contains the python scripts that can be used to extarct equivale
       - a tab delimited file with an extracted equivalent junction sequence for each annotated exon-exon boundary: 
 
    ```
-         equiv_junc_sequence   gene_name    chromosome    strand   donor_exon_coordinate   acceptor_exon_coordinate 
+         equiv_junc_sequence    gene_name    chromosome    strand    donor_exon_coordinate    acceptor_exon_coordinate 
    ```
    - example equivalent junction in the output file:
    
@@ -44,9 +44,9 @@ This repository contains the python scripts that can be used to extarct equivale
       - a tab delimited file with the extracted equivalent junction sequence for each annotated exon-exon boundary: 
   
    ```
-         equiv_junc_sequence   gene_name   strand   chromosome   donor_exon_coordinate   acceptor_exon_coordinate 
+         equiv_junc_sequence    gene_name    chromosome    strand    donor_exon_coordinate    acceptor_exon_coordinate 
    ```
-   Note: Example genome and annotations that have been analyzed for equivalent junctions are provided in equiv_junc_genomes.md. The codes are pretty general and any genome can be used for equivalent junction analysis.
+   Note: Example genome fasta and annotation files that have been analyzed for equivalent junctions are provided in [equiv_junc_genomes](https://github.com/roozbehdn/Equivalent-Junctions/blob/master/equiv_junc_genomes.md).
 
 ## Computing the number of equivalent junctions:
 
