@@ -57,7 +57,7 @@ cut -f1,3,4,5,6 output_file.txt | sort -u |cut -f1 | sort |uniq -c| sort -k1nr >
 
 # Citation
 
-Dehghannasiri, R., Szabo, L., and Salzman, J., 2019. Ambiguous splice sites distinguish circRNA and linear splicing in the human genome, Bioinformatics, April 2019, (https://academic.oup.com/bioinformatics/article/35/8/1263/5091181)
+Dehghannasiri, R., Szabo, L., and Salzman, J., Ambiguous splice sites distinguish circRNA and linear splicing in the human genome, Bioinformatics, April 2019, (https://academic.oup.com/bioinformatics/article/35/8/1263/5091181)
 
 # Contact
 
