@@ -1,6 +1,6 @@
 # Equivalent Junctions
 
-This repository contains the python scripts that can be used to extarct equivalent junctions for a genome. The codes are pretty general and can be used for any genome.
+This repository contains the python scripts for extarcting equivalent junctions (the set of neighboring junctions that result in the same junction sequence) in a reference transcriptome. The codes are general and can be used for any organism and genome assembly.
 
 # Software
 
